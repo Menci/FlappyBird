@@ -1,0 +1,131 @@
+html {
+  margin: 0;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#stage {
+  background-image: url(img/stage_sky.png);
+  width: 384px;
+  height: 512px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  width: 100%;
+  height: 64px;
+  overflow: hidden;
+  z-index: 101;
+}
+
+#bottom #bottom-a, #bottom #bottom-b {
+  background-image: url(img/stage_ground.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+}
+
+#bird {
+  background-image: url(img/bird.png);
+  top: -1000px;
+  width: 43px;
+  height: 30px;
+  left: calc(30%);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 -70px;
+  position: absolute;
+  z-index: 100;
+}
+
+.pipes {
+  width: 69px;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.pipes > div {
+  width: 69px;
+  background-image: url(img/pipe_body.png);
+  background-size: 65px 1px;
+  background-repeat: repeat-y;
+  background-position: 2px 0;
+  position: absolute;
+}
+
+.pipes > div.top {
+  top: 0;
+}
+
+.pipes > div.top:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 69px;
+  height: 32px;
+  background-image: url(img/pipe_head_1.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.pipes > div.bottom {
+  bottom: 64px;
+}
+
+.pipes > div.bottom:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 69px;
+  height: 32px;
+  background-image: url(img/pipe_head_2.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.pipes > div.passtest {
+  height: 100%;
+  top: 0;
+  width: 1px;
+  right: 0;
+  position: absolute;
+}
+
+#pipes-template {
+  display: none;
+}
+
+#score {
+  font-family: sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 205px;
+  width: 100%;
+  color: #cecece;
+  text-shadow: 0 0 10px #666;
+  font-size: 45px;
+  z-index: 102;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+}
