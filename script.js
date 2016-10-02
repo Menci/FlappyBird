@@ -1,3 +1,5 @@
+'use strict';
+
 function parse(s) {
   return (parseInt(s.substr(0, s.length - 2))) || 0;
 }
