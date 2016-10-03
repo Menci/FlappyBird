@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     bird.style.opacity = 1;
     score.style.opacity = 0;
     let pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    if (!pipes.length) pipes = [];
+
     for (let p of pipes) {
       p.parentNode.removeChild(p);
     }
@@ -110,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!game) return;
 
     let pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    if (!pipes.length) pipes = [];
     for (let pipe of pipes) {
       pipe.style.left = change(pipe.style.left, -pipesMoveSpeed / fps);
       if (parse(pipe.style.left) < -69) pipe.parentNode.removeChild(pipe);
@@ -183,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let stageRect = stage.getBoundingClientRect();
     let birdRect = getBirdRect();
     let a = stage.querySelectorAll('.pipes .passtest') || [];
+    if (!a.length) a = [];
     for (let e of a) {
       if (typeof e.passed !== 'undefined') continue;
 

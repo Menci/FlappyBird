@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
     bird.style.opacity = 1;
     score.style.opacity = 0;
     var pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    if (!pipes.length) pipes = [];
+
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
@@ -128,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!game) return;
 
     var pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    if (!pipes.length) pipes = [];
     var _iteratorNormalCompletion2 = true;
     var _didIteratorError2 = false;
     var _iteratorError2 = undefined;
@@ -271,6 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var stageRect = stage.getBoundingClientRect();
     var birdRect = getBirdRect();
     var a = stage.querySelectorAll('.pipes .passtest') || [];
+    if (!a.length) a = [];
     var _iteratorNormalCompletion5 = true;
     var _didIteratorError5 = false;
     var _iteratorError5 = undefined;
