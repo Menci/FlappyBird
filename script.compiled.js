@@ -19,7 +19,7 @@ function rectIntersect(a, b) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var fps = 60;
+  var fps = 70;
   var g = 40 / fps;
   var game = false;
   var birdSpeed = 0;
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     bird.style.top = '130px';
     bird.style.opacity = 1;
     score.style.opacity = 0;
-    var pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    var pipes = Array.from(document.querySelectorAll('.pipes:not(#pipes-template)') || []);
     if (!pipes.length) pipes = [];
 
     var _iteratorNormalCompletion = true;
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setInterval(function () {
     if (!game) return;
 
-    var pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    var pipes = Array.from(document.querySelectorAll('.pipes:not(#pipes-template)') || []);
     if (!pipes.length) pipes = [];
     var _iteratorNormalCompletion2 = true;
     var _didIteratorError2 = false;
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var stageRect = stage.getBoundingClientRect();
 
     var rects = new Array();
-    var a = stage.querySelectorAll('.pipes .top, .pipes .bottom, #bottom');
+    var a = Array.from(stage.querySelectorAll('.pipes .top, .pipes .bottom, #bottom'));
     var _iteratorNormalCompletion3 = true;
     var _didIteratorError3 = false;
     var _iteratorError3 = undefined;
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var stageRect = stage.getBoundingClientRect();
     var birdRect = getBirdRect();
-    var a = stage.querySelectorAll('.pipes .passtest') || [];
+    var a = Array.from(stage.querySelectorAll('.pipes .passtest') || []);
     if (!a.length) a = [];
     var _iteratorNormalCompletion5 = true;
     var _didIteratorError5 = false;

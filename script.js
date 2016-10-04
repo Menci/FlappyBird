@@ -22,7 +22,7 @@ function rectIntersect(a, b) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const fps = 60;
+  const fps = 70;
   const g = 40 / fps;
   let game = false;
   let birdSpeed = 0;
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bird.style.top = '130px';
     bird.style.opacity = 1;
     score.style.opacity = 0;
-    let pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    let pipes = Array.from(document.querySelectorAll('.pipes:not(#pipes-template)') || []);
     if (!pipes.length) pipes = [];
 
     for (let p of pipes) {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(() => {
     if (!game) return;
 
-    let pipes = document.querySelectorAll('.pipes:not(#pipes-template)') || [];
+    let pipes = Array.from(document.querySelectorAll('.pipes:not(#pipes-template)') || []);
     if (!pipes.length) pipes = [];
     for (let pipe of pipes) {
       pipe.style.left = change(pipe.style.left, -pipesMoveSpeed / fps);
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let stageRect = stage.getBoundingClientRect();
 
     let rects = new Array();
-    let a = stage.querySelectorAll('.pipes .top, .pipes .bottom, #bottom');
+    let a = Array.from(stage.querySelectorAll('.pipes .top, .pipes .bottom, #bottom'));
     for (let e of a) {
       let _pipeRect = e.getBoundingClientRect(), pipeRect = {};
       pipeRect.left = _pipeRect.left - stageRect.left;
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let stageRect = stage.getBoundingClientRect();
     let birdRect = getBirdRect();
-    let a = stage.querySelectorAll('.pipes .passtest') || [];
+    let a = Array.from(stage.querySelectorAll('.pipes .passtest') || []);
     if (!a.length) a = [];
     for (let e of a) {
       if (typeof e.passed !== 'undefined') continue;
